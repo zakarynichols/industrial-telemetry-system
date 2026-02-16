@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  timescaledb:
+    image: timescale/timescaledb:latest-pg15
+    container_name: telemetry-db
+    environment:
+      POSTGRES_USER: telemetry
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: telemetry
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - telemetry
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U telemetry"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  grafana:
+    image: grafana/grafana
+    container_name: telemetry-grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD}
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    depends_on:
+      timescaledb:
+        condition: service_healthy
+    networks:
+      - telemetry
+
+  telemetry:
+    build:
+      context: ./services/telemetry
+    container_name: telemetry-app
+    ports:
+      - "8083:8083"
+    environment:
+      DB_HOST: timescaledb
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_USER: telemetry
+      DB_NAME: telemetry
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASSWORD: ${SMTP_PASSWORD}
+      SLACK_WEBHOOK: ${SLACK_WEBHOOK}
+    depends_on:
+      timescaledb:
+        condition: service_healthy
+    networks:
+      - telemetry
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8083/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  simulator:
+    build:
+      context: ./services/simulator
+    container_name: telemetry-simulator
+    environment:
+      API_URL: http://telemetry:8083
+      MACHINE_COUNT: ${MACHINE_COUNT:-10}
+      METRICS_PER_SECOND: ${METRICS_PER_SECOND:-100}
+    depends_on:
+      telemetry:
+        condition: service_started
+    networks:
+      - telemetry
+
+volumes:
+  pgdata:
+  grafana-data:
+
+networks:
+  telemetry:
+    driver: bridge
