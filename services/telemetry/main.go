@@ -45,6 +45,8 @@ func main() {
 
 	alertService := processing.NewAlertService(pool, cfg)
 
+	go alertService.StartBackgroundChecks(ctx)
+
 	router := mux.NewRouter()
 	router.HandleFunc("/health", healthHandler)
 	router.HandleFunc("/api/v1/machines", machinesHandler(pool))
