@@ -87,6 +87,63 @@ func Migrate(ctx context.Context, pool *pgxpool.Pool) error {
 		logMigrationError("Failed to create metrics name index: %v", err)
 	}
 
+	if err := seedAlertRules(ctx, pool); err != nil {
+		logMigrationError("Failed to seed alert rules: %v", err)
+	}
+
+	return nil
+}
+
+func seedAlertRules(ctx context.Context, pool *pgxpool.Pool) error {
+	rules := []struct {
+		name, metricName, conditionType, operator, severity string
+		thresholdValue                                      float64
+	}{
+		// Temperature alerts - motor winding temp
+		{"Motor Temperature High", "temperature", "threshold", ">", "warning", 70},
+		{"Motor Temperature Critical", "temperature", "threshold", ">", "critical", 80},
+
+		// Vibration alerts - bearing health indicator
+		{"Vibration Warning", "vibration", "threshold", ">", "warning", 5.0},
+		{"Vibration Critical", "vibration", "threshold", ">", "critical", 7.0},
+
+		// Pressure alerts - discharge pressure
+		{"Discharge Pressure High", "pressure", "threshold", ">", "warning", 5.0},
+		{"Discharge Pressure Critical", "pressure", "threshold", ">", "critical", 5.5},
+		{"Discharge Pressure Low", "pressure", "threshold", "<", "warning", 2.0},
+
+		// Current alerts - motor load
+		{"Motor Current High", "current", "threshold", ">", "warning", 140},
+		{"Motor Current Critical", "current", "threshold", ">", "critical", 170},
+
+		// RPM alerts - motor speed
+		{"RPM Low", "rpm", "threshold", "<", "warning", 1700},
+		{"RPM High", "rpm", "threshold", ">", "warning", 1800},
+
+		// Voltage alerts - power quality
+		{"Voltage Low", "voltage", "threshold", "<", "warning", 440},
+		{"Voltage High", "voltage", "threshold", ">", "critical", 480},
+	}
+
+	for _, rule := range rules {
+		var exists bool
+		err := pool.QueryRow(ctx, "SELECT EXISTS(SELECT 1 FROM alert_rules WHERE name = $1 AND metric_name = $2)", rule.name, rule.metricName).Scan(&exists)
+		if err != nil {
+			return fmt.Errorf("failed to check rule existence: %w", err)
+		}
+
+		if !exists {
+			_, err := pool.Exec(ctx,
+				"INSERT INTO alert_rules (name, metric_name, condition_type, threshold_value, operator, severity) VALUES ($1, $2, $3, $4, $5, $6)",
+				rule.name, rule.metricName, rule.conditionType, rule.thresholdValue, rule.operator, rule.severity,
+			)
+			if err != nil {
+				return fmt.Errorf("failed to insert rule %s: %w", rule.name, err)
+			}
+			fmt.Printf("Seeded alert rule: %s\n", rule.name)
+		}
+	}
+
 	return nil
 }
 

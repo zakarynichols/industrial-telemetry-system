@@ -1,4 +1,4 @@
-module github.com/zakrynichols/industrial-telemtry-system/services/simulator
+module github.com/zakrynichols/industrial-telemetry-system/services/simulator
 
 go 1.21
 
