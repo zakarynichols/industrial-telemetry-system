@@ -1,13 +1,25 @@
 {
   "annotations": {
-    "list": []
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": null,
+  "id": 1,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
       "datasource": {
@@ -23,29 +35,55 @@
           "thresholds": {
             "mode": "absolute",
             "steps": [
-              {"color": "green", "value": null},
-              {"color": "yellow", "value": 1},
-              {"color": "red", "value": 10}
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "yellow",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
             ]
           },
           "unit": "short"
         },
         "overrides": []
       },
-      "gridPos": {"h": 4, "w": 4, "x": 0, "y": 0},
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
       "id": 1,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
-        "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false},
-        "textMode": "auto"
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.5.0",
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -53,37 +91,68 @@
           "refId": "A"
         }
       ],
-      "title": "🟢 Active Machines",
+      "title": "Active Pumps",
       "type": "stat"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null},
-            {"color": "red", "value": 1}
-          ]},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
           "unit": "short"
         },
         "overrides": []
       },
-      "gridPos": {"h": 4, "w": 4, "x": 4, "y": 0},
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 0
+      },
       "id": 2,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
-        "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false},
-        "textMode": "auto"
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.5.0",
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -91,38 +160,72 @@
           "refId": "A"
         }
       ],
-      "title": "🔴 Machines Sending Data",
+      "title": "Machines Sending Data",
       "type": "stat"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null},
-            {"color": "yellow", "value": 1},
-            {"color": "red", "value": 10}
-          ]},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "yellow",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          },
           "unit": "short"
         },
         "overrides": []
       },
-      "gridPos": {"h": 4, "w": 4, "x": 8, "y": 0},
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 0
+      },
       "id": 3,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
-        "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false},
-        "textMode": "auto"
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.5.0",
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -130,38 +233,72 @@
           "refId": "A"
         }
       ],
-      "title": "⚠️ Active Alerts",
+      "title": "Active Alerts",
       "type": "stat"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null},
-            {"color": "yellow", "value": 50},
-            {"color": "red", "value": 100}
-          ]},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "yellow",
+                "value": 50
+              },
+              {
+                "color": "red",
+                "value": 100
+              }
+            ]
+          },
           "unit": "short"
         },
         "overrides": []
       },
-      "gridPos": {"h": 4, "w": 4, "x": 12, "y": 0},
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 0
+      },
       "id": 4,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
-        "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false},
-        "textMode": "auto"
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.5.0",
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -169,36 +306,64 @@
           "refId": "A"
         }
       ],
-      "title": "📊 Metrics/sec",
+      "title": "Metrics/sec",
       "type": "stat"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null}
-          ]},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          },
           "unit": "short"
         },
         "overrides": []
       },
-      "gridPos": {"h": 4, "w": 4, "x": 16, "y": 0},
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 0
+      },
       "id": 5,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
-        "reduceOptions": {"calcs": ["lastNotNull"], "fields": "", "values": false},
-        "textMode": "auto"
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "9.5.0",
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -206,38 +371,72 @@
           "refId": "A"
         }
       ],
-      "title": "📋 Active Rules",
+      "title": "Active Rules",
       "type": "stat"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null},
-            {"color": "yellow", "value": 60},
-            {"color": "red", "value": 80}
-          ]},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "yellow",
+                "value": 70
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
           "unit": "celsius"
         },
         "overrides": []
       },
-      "gridPos": {"h": 4, "w": 4, "x": 0, "y": 4},
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 4
+      },
       "id": 101,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
-        "reduceOptions": {"calcs": ["mean"], "fields": "", "values": false},
-        "textMode": "value_and_name"
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "value_and_name",
+        "wideLayout": true
       },
-      "pluginVersion": "9.5.0",
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -245,38 +444,72 @@
           "refId": "A"
         }
       ],
-      "title": "🌡️ Avg Temp",
+      "title": "Avg Temp",
       "type": "stat"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null},
-            {"color": "yellow", "value": 6},
-            {"color": "red", "value": 8}
-          ]},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "yellow",
+                "value": 5
+              },
+              {
+                "color": "red",
+                "value": 7
+              }
+            ]
+          },
           "unit": "mm/s"
         },
         "overrides": []
       },
-      "gridPos": {"h": 4, "w": 4, "x": 4, "y": 4},
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 4
+      },
       "id": 102,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
-        "reduceOptions": {"calcs": ["mean"], "fields": "", "values": false},
-        "textMode": "value_and_name"
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "value_and_name",
+        "wideLayout": true
       },
-      "pluginVersion": "9.5.0",
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -284,38 +517,72 @@
           "refId": "A"
         }
       ],
-      "title": "📳 Avg Vibration",
+      "title": "Avg Vibration",
       "type": "stat"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null},
-            {"color": "yellow", "value": 4},
-            {"color": "red", "value": 5}
-          ]},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "yellow",
+                "value": 5
+              },
+              {
+                "color": "red",
+                "value": 5.5
+              }
+            ]
+          },
           "unit": "bar"
         },
         "overrides": []
       },
-      "gridPos": {"h": 4, "w": 4, "x": 8, "y": 4},
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 4
+      },
       "id": 103,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
-        "reduceOptions": {"calcs": ["mean"], "fields": "", "values": false},
-        "textMode": "value_and_name"
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "value_and_name",
+        "wideLayout": true
       },
-      "pluginVersion": "9.5.0",
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -323,36 +590,64 @@
           "refId": "A"
         }
       ],
-      "title": "⚖️ Avg Pressure",
+      "title": "Avg Pressure",
       "type": "stat"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null}
-          ]},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          },
           "unit": "rpm"
         },
         "overrides": []
       },
-      "gridPos": {"h": 4, "w": 4, "x": 12, "y": 4},
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 4
+      },
       "id": 104,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
-        "reduceOptions": {"calcs": ["mean"], "fields": "", "values": false},
-        "textMode": "value_and_name"
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "value_and_name",
+        "wideLayout": true
       },
-      "pluginVersion": "9.5.0",
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -360,67 +655,130 @@
           "refId": "A"
         }
       ],
-      "title": "🔄 Avg RPM",
+      "title": "Avg RPM",
       "type": "stat"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "thresholds"
           },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 20,
             "gradientMode": "opacity",
-            "hideFrom": {"tooltip": false, "viz": false, "legend": false},
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
             "lineInterpolation": "smooth",
             "lineWidth": 2,
             "pointSize": 5,
-            "scaleDistribution": {"type": "linear"},
+            "scaleDistribution": {
+              "type": "linear"
+            },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": false,
-            "stacking": {"group": "A", "mode": "none"},
-            "thresholdsStyle": {"mode": "line"}
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
           },
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
-              {"color": "green", "value": null},
-              {"color": "red", "value": 80}
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
             ]
           },
           "unit": "celsius"
         },
         "overrides": [
           {
-            "matcher": {"id": "byName", "options": "value"},
+            "matcher": {
+              "id": "byName",
+              "options": "value"
+            },
             "properties": [
-              {"id": "thresholds", "value": {"mode": "absolute", "steps": [
-                {"color": "green", "value": null},
-                {"color": "yellow", "value": 60},
-                {"color": "red", "value": 80}
-              ]}}
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "yellow",
+                      "value": 70
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              }
             ]
           }
         ]
       },
-      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
       "id": 10,
       "options": {
-        "legend": {"calcs": ["mean", "last"], "displayMode": "table", "placement": "bottom", "showLegend": true},
-        "tooltip": {"mode": "multi", "sort": "desc"}
+        "legend": {
+          "calcs": [
+            "mean",
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "time_series",
           "rawQuery": true,
@@ -428,51 +786,101 @@
           "refId": "A"
         }
       ],
-      "title": "🌡️ Temperature",
+      "title": "Temperature - Avg",
       "type": "timeseries"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 20,
             "gradientMode": "opacity",
-            "hideFrom": {"tooltip": false, "viz": false, "legend": false},
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
             "lineInterpolation": "smooth",
             "lineWidth": 2,
             "pointSize": 5,
-            "scaleDistribution": {"type": "linear"},
+            "scaleDistribution": {
+              "type": "linear"
+            },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": false,
-            "stacking": {"group": "A", "mode": "none"},
-            "thresholdsStyle": {"mode": "line"}
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
           },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null},
-            {"color": "red", "value": 10}
-          ]},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          },
           "unit": "mm/s"
         },
         "overrides": []
       },
-      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
       "id": 11,
       "options": {
-        "legend": {"calcs": ["mean", "last"], "displayMode": "table", "placement": "bottom", "showLegend": true},
-        "tooltip": {"mode": "multi", "sort": "desc"}
+        "legend": {
+          "calcs": [
+            "mean",
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "time_series",
           "rawQuery": true,
@@ -480,51 +888,101 @@
           "refId": "A"
         }
       ],
-      "title": "📳 Vibration",
+      "title": "Vibration - Avg",
       "type": "timeseries"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 20,
             "gradientMode": "opacity",
-            "hideFrom": {"tooltip": false, "viz": false, "legend": false},
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
             "lineInterpolation": "smooth",
             "lineWidth": 2,
             "pointSize": 5,
-            "scaleDistribution": {"type": "linear"},
+            "scaleDistribution": {
+              "type": "linear"
+            },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": false,
-            "stacking": {"group": "A", "mode": "none"},
-            "thresholdsStyle": {"mode": "line"}
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
           },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null},
-            {"color": "red", "value": 5}
-          ]},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 5
+              }
+            ]
+          },
           "unit": "bar"
         },
         "overrides": []
       },
-      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 16},
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
       "id": 12,
       "options": {
-        "legend": {"calcs": ["mean", "last"], "displayMode": "table", "placement": "bottom", "showLegend": true},
-        "tooltip": {"mode": "multi", "sort": "desc"}
+        "legend": {
+          "calcs": [
+            "mean",
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "time_series",
           "rawQuery": true,
@@ -532,50 +990,97 @@
           "refId": "A"
         }
       ],
-      "title": "⚖️ Pressure",
+      "title": "Pressure - Avg",
       "type": "timeseries"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "custom": {
+            "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 20,
             "gradientMode": "opacity",
-            "hideFrom": {"tooltip": false, "viz": false, "legend": false},
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
             "lineInterpolation": "smooth",
             "lineWidth": 2,
             "pointSize": 5,
-            "scaleDistribution": {"type": "linear"},
+            "scaleDistribution": {
+              "type": "linear"
+            },
             "showPoints": "never",
+            "showValues": false,
             "spanNulls": false,
-            "stacking": {"group": "A", "mode": "none"},
-            "thresholdsStyle": {"mode": "off"}
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
           },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null}
-          ]},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          },
           "unit": "rpm"
         },
         "overrides": []
       },
-      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 16},
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
       "id": 13,
       "options": {
-        "legend": {"calcs": ["mean", "last"], "displayMode": "table", "placement": "bottom", "showLegend": true},
-        "tooltip": {"mode": "multi", "sort": "desc"}
+        "legend": {
+          "calcs": [
+            "mean",
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "desc"
+        }
       },
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "time_series",
           "rawQuery": true,
@@ -583,11 +1088,14 @@
           "refId": "A"
         }
       ],
-      "title": "🔄 RPM",
+      "title": "RPM - Avg",
       "type": "timeseries"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -599,43 +1107,133 @@
               "mode": "gradient",
               "type": "color-background"
             },
+            "footer": {
+              "reducers": []
+            },
             "inspect": false
           },
           "mappings": [
-            {"options": {"false": {"color": "green", "index": 0}, "true": {"color": "gray", "index": 1}}, "type": "value"}
+            {
+              "options": {
+                "false": {
+                  "color": "green",
+                  "index": 0
+                },
+                "true": {
+                  "color": "gray",
+                  "index": 1
+                }
+              },
+              "type": "value"
+            }
           ],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null},
-            {"color": "red", "value": 1}
-          ]}
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
         },
         "overrides": [
           {
-            "matcher": {"id": "byName", "options": "acknowledged"},
+            "matcher": {
+              "id": "byName",
+              "options": "acknowledged"
+            },
             "properties": [
-              {"id": "custom.cellOptions", "value": {"mode": "auto", "type": "auto"}},
-              {"id": "mappings", "value": [{"options": {"false": {"color": "orange", "index": 0}, "true": {"color": "green", "index": 1}}, "type": "value"}]}
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "auto",
+                  "type": "auto"
+                }
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "false": {
+                        "color": "orange",
+                        "index": 0
+                      },
+                      "true": {
+                        "color": "green",
+                        "index": 1
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              }
             ]
           },
           {
-            "matcher": {"id": "byName", "options": "severity"},
+            "matcher": {
+              "id": "byName",
+              "options": "severity"
+            },
             "properties": [
-              {"id": "custom.cellOptions", "value": {"mode": "gradient", "type": "color-background"}},
-              {"id": "mappings", "value": [{"options": {"critical": {"color": "red", "index": 1}, "warning": {"color": "orange", "index": 0}}, "type": "value"}]}
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "gradient",
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "critical": {
+                        "color": "red",
+                        "index": 1
+                      },
+                      "warning": {
+                        "color": "orange",
+                        "index": 0
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              }
             ]
           }
         ]
       },
-      "gridPos": {"h": 10, "w": 24, "x": 0, "y": 24},
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
       "id": 20,
       "options": {
+        "cellHeight": "sm",
         "showHeader": true,
-        "sortBy": [{"desc": true, "display": "created_at"}]
+        "sortBy": [
+          {
+            "desc": true,
+            "display": "created_at"
+          }
+        ]
       },
-      "pluginVersion": "9.5.0",
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -643,33 +1241,60 @@
           "refId": "A"
         }
       ],
-      "title": "🚨 Unacknowledged Alerts",
+      "title": "Unacknowledged Alerts",
       "type": "table"
     },
     {
-      "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
       "fieldConfig": {
         "defaults": {
-          "color": {"mode": "thresholds"},
+          "color": {
+            "mode": "thresholds"
+          },
           "custom": {
             "align": "auto",
-            "cellOptions": {"type": "auto"},
+            "cellOptions": {
+              "type": "auto"
+            },
+            "footer": {
+              "reducers": []
+            },
             "inspect": false
           },
           "mappings": [],
-          "thresholds": {"mode": "absolute", "steps": [
-            {"color": "green", "value": null}
-          ]}
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          }
         },
         "overrides": []
       },
-      "gridPos": {"h": 8, "w": 24, "x": 0, "y": 34},
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 34
+      },
       "id": 30,
-      "options": {"showHeader": true},
-      "pluginVersion": "9.5.0",
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.3.3",
       "targets": [
         {
-          "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -677,56 +1302,432 @@
           "refId": "A"
         }
       ],
-      "title": "📋 Machine Status Overview",
+      "title": "Pump Status Overview",
       "type": "table"
     },
     {
-      "gridPos": {"h": 8, "w": 24, "x": 0, "y": 34},
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "mode": "gradient",
+              "type": "color-background"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "yellow",
+                "value": 70
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 0,
+        "y": 42
+      },
+      "id": 1000,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.3.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT m.name as pump, round(max(mt.value)::numeric, 1) as max_temp_c\nFROM metrics mt\nJOIN machines m ON m.id = mt.machine_id\nWHERE mt.metric_name = 'temperature' AND mt.time > now() - interval '5 minutes'\nGROUP BY m.name\nORDER BY max_temp_c DESC\nLIMIT 5",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Highest Temperature",
+      "type": "table"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 48
+      },
       "id": 999,
       "options": {
+        "alertInstanceLabelFilter": "",
+        "alertName": "",
+        "dashboardAlerts": false,
+        "groupBy": [],
+        "groupMode": "default",
         "maxItems": 20,
         "maxItemsInGroup": 5,
         "nameSortOrder": "asc",
+        "showInactiveAlerts": false,
         "showInstances": false,
         "sortOrder": 1,
-        "stateFilter": {"firing": true, "pending": true}
+        "stateFilter": {
+          "error": true,
+          "firing": true,
+          "noData": false,
+          "normal": false,
+          "pending": true,
+          "recovering": true
+        },
+        "viewMode": "list"
       },
-      "title": "🚨 Grafana Alerts",
+      "pluginVersion": "12.3.3",
+      "title": "Grafana Alerts",
       "type": "alertlist"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "mode": "gradient",
+              "type": "color-background"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "yellow",
+                "value": 5
+              },
+              {
+                "color": "red",
+                "value": 7
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 6,
+        "y": 56
+      },
+      "id": 21,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.3.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT m.name as pump, round(max(mt.value)::numeric, 1) as max_vibration\nFROM metrics mt\nJOIN machines m ON m.id = mt.machine_id\nWHERE mt.metric_name = 'vibration' AND mt.time > now() - interval '5 minutes'\nGROUP BY m.name\nORDER BY max_vibration DESC\nLIMIT 5",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Highest Vibration",
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "mode": "gradient",
+              "type": "color-background"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "yellow",
+                "value": 5
+              },
+              {
+                "color": "red",
+                "value": 5.5
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 12,
+        "y": 56
+      },
+      "id": 22,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.3.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT m.name as pump, round(max(mt.value)::numeric, 1) as max_pressure\nFROM metrics mt\nJOIN machines m ON m.id = mt.machine_id\nWHERE mt.metric_name = 'pressure' AND mt.time > now() - interval '5 minutes'\nGROUP BY m.name\nORDER BY max_pressure DESC\nLIMIT 5",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Highest Pressure",
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "TimescaleDB"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "mode": "gradient",
+              "type": "color-background"
+            },
+            "footer": {
+              "reducers": []
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "yellow",
+                "value": 140
+              },
+              {
+                "color": "red",
+                "value": 170
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 18,
+        "y": 56
+      },
+      "id": 23,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "pluginVersion": "12.3.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "TimescaleDB"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "SELECT m.name as pump, round(max(mt.value)::numeric, 1) as max_current\nFROM metrics mt\nJOIN machines m ON m.id = mt.machine_id\nWHERE mt.metric_name = 'current' AND mt.time > now() - interval '5 minutes'\nGROUP BY m.name\nORDER BY max_current DESC\nLIMIT 5",
+          "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "title": "Highest Current",
+      "type": "table"
     }
   ],
+  "preload": false,
   "refresh": "5s",
-  "schemaVersion": 38,
-  "style": "dark",
-  "tags": ["telemetry", "operator"],
+  "schemaVersion": 42,
+  "tags": [
+    "telemetry",
+    "operator"
+  ],
   "templating": {
     "list": [
       {
-        "current": {"text": "All Machines", "value": ""},
-        "datasource": {"type": "postgres", "uid": "TimescaleDB"},
+        "current": {
+          "text": "All Machines",
+          "value": ""
+        },
+        "datasource": {
+          "type": "postgres",
+          "uid": "TimescaleDB"
+        },
         "definition": "SELECT name || ' - ' || id::text FROM machines ORDER BY name",
-        "hide": 0,
         "includeAll": true,
         "label": "Machine",
-        "multi": false,
         "name": "machine",
         "options": [],
-        "query": {"query": "SELECT name || ' - ' || id::text FROM machines ORDER BY name", "refId": "StandardVariableQuery"},
+        "query": {
+          "query": "SELECT name || ' - ' || id::text FROM machines ORDER BY name",
+          "refId": "StandardVariableQuery"
+        },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
         "type": "query"
       }
     ]
   },
-  "time": {"from": "now-15m", "to": "now"},
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
   "timepicker": {
-    "refresh_intervals": ["5s", "10s", "30s", "1m", "5m"]
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m"
+    ]
   },
   "timezone": "",
-  "title": "Operator Dashboard",
+  "title": "Pump Station Dashboard",
   "uid": "operator-dashboard",
-  "version": 1,
-  "weekStart": ""
+  "version": 20
 }
